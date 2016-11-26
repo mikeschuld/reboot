@@ -10,14 +10,14 @@ $font-headings-h4-size: $font-headings-h3-size * 0.8;
 $font-headings-h5-size: $font-headings-h4-size * 0.8;
 $font-headings-h6-size: $font-headings-h5-size * 0.8;
 
-$font-headings-size-span: 0.6em;
+$font-headings-span-size: 0.6em;
 
 @mixin heading-font($size) {
 	font-family: $font-headings;
 	font-size: $size;
 
 	span {
-		font-size: $font-headings-size-span;
+		font-size: $font-headings-span-size;
 	}
 }
 
@@ -38,8 +38,14 @@ $font-headings-size-span: 0.6em;
 
 	h3, h4, h5, h6 {
 		span {
-			font-size: $font-headings-size-span * 1.3;
+			font-size: $font-headings-span-size * 1.3;
 			font-weight: normal;
 		}
+	}
+
+	pre {
+		line-height: 1em;
+		font-family: monospace;
+		font-size: 0.85em;
 	}
 }

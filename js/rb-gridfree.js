@@ -3,7 +3,7 @@ var rb_gridfree = function($container) {
 }
 
 rb_gridfree.prototype.initialize = function() {
-    this.$blocks = this.$container.find("[data-rb-gf-fix],[data-rb-gf-rel]");
+    this.$blocks = this.$container.children("[data-rb-gf-fix],[data-rb-gf-rel]");
     console.log(`rb: initializing ${this.$blocks.length} blocks`);
 
     var fixedTotal = 0;
@@ -44,7 +44,9 @@ rb_gridfree.prototype.initialize = function() {
  rb_gridfree.prototype.resize = function() {
     var pctScaler = (this.$container.width() - this.fixedTotal) / this.$container.width();
 
-    this.$blocks.each(function(b, block) {
+    for(var b = 0; b < this.$blocks.length; b++) {
+        var block = this.$blocks[b];
+
         var pct = $(block).data("rb-gf-rel-pct") * pctScaler * 100;
         var fix = $(block).data("rb-gf-fix");
         var margin = $(block).css("margin")
@@ -60,9 +62,8 @@ rb_gridfree.prototype.initialize = function() {
         }
 
         $(block).css("width", `calc(${width})`);
-    });
+    }
 }
-
 
 $(function(){
     $(".rb-gridfree").each(function(){

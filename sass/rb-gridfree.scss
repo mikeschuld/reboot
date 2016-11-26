@@ -8,8 +8,9 @@
 		flex-wrap: wrap;
 	
 		[data-rb-gf-fix],[data-rb-gf-rel],[data-rb-gf-all] {
+			box-sizing: border-box;
 			margin: $content-padding / 2;
-			overflow: hidden;
+			overflow: auto;
 		}
 
 		[data-rb-gf-fix] {
@@ -18,6 +19,23 @@
 
 		[data-rb-gf-all] {
 			width: 100%;
+		}
+
+		> .rb-gridfree {
+			margin: -$content-padding / 2;
+		}
+	}
+
+	tr.rb-gridfree {
+		display: table-row;
+
+		td[data-rb-gf-fix],
+		th[data-rb-gf-fix],
+		td[data-rb-gf-rel],
+		th[data-rb-gf-rel] {
+			position: static;
+			display: table-cell;
+			float: none;
 		}
 	}
 }

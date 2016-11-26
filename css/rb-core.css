@@ -22,6 +22,14 @@
     border: 1px solid #888;
     box-shadow: 0 0 4px #aaa; }
 
+.rb-container .rb-border, .rb-container .rb-border-rounded, .rb-container-dark .rb-border, .rb-container-dark .rb-border-rounded {
+  border: 1px solid; }
+.rb-container .rb-border-rounded, .rb-container-dark .rb-border-rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
 .rb-container, .rb-container-dark {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 16px; }
@@ -60,14 +68,10 @@
   .rb-container h3 span, .rb-container h4 span, .rb-container h5 span, .rb-container h6 span, .rb-container-dark h3 span, .rb-container-dark h4 span, .rb-container-dark h5 span, .rb-container-dark h6 span {
     font-size: 0.78em;
     font-weight: normal; }
-
-.rb-container .rb-border, .rb-container .rb-border-rounded, .rb-container-dark .rb-border, .rb-container-dark .rb-border-rounded {
-  border: 1px solid; }
-.rb-container .rb-border-rounded, .rb-container-dark .rb-border-rounded {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px; }
+  .rb-container pre, .rb-container-dark pre {
+    line-height: 1em;
+    font-family: monospace;
+    font-size: 0.85em; }
 
 .rb-container, .rb-container-dark {
   padding: 0.5em; }
