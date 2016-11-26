@@ -4,7 +4,7 @@ var rb_gridfree = function($container) {
 
 rb_gridfree.prototype.initialize = function() {
     this.$blocks = this.$container.children("[data-rb-gf-fix],[data-rb-gf-rel]");
-    console.log(`rb: initializing ${this.$blocks.length} blocks`);
+    console.log("rb: initializing " + this.$blocks.length + " blocks");
 
     var fixedTotal = 0;
     var relativeTotal = 0;
@@ -31,10 +31,10 @@ rb_gridfree.prototype.initialize = function() {
         var rel = $(block).data("rb-gf-rel");
         var fix = $(block).data("rb-gf-fix");
 
-        $(block).data("rb-gf-rel-pct", rel / relativeTotal);
+        $(block).attr("data-rb-gf-rel-pct", rel / relativeTotal);
     });
 
-    console.log(`rb: found ${fixedTotal} fix and ${relativeTotal} rel`)
+    console.log("rb: found " + fixedTotal + " fix and " + relativeTotal + " rel")
 
     this.resize();
 
@@ -49,19 +49,19 @@ rb_gridfree.prototype.initialize = function() {
 
         var pct = $(block).data("rb-gf-rel-pct") * pctScaler * 100;
         var fix = $(block).data("rb-gf-fix");
-        var margin = $(block).css("margin")
+        var margin = $(block).css("marginLeft") || "0px";
 
-        var width = `0px - 2 * ${margin}`;
+        var width = "0px - 2 * " + margin;
 
         if (pct) {
-            width += ` + ${pct}%`;
+            width += " + " + pct + "%";
         }
 
         if (fix) {
-            width += ` + ${fix}px`;
+            width += " + " + fix + "px";
         }
 
-        $(block).css("width", `calc(${width})`);
+        $(block).css("width", "calc(" + width + ")");
     }
 }
 
