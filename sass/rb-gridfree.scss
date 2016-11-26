@@ -1,0 +1,23 @@
+@import 'common';
+
+.rb-container, .rb-container-dark {
+	.rb-gridfree {
+		padding: $content-padding / 2;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	
+		[data-rb-gf-fix],[data-rb-gf-rel],[data-rb-gf-all] {
+			margin: $content-padding / 2;
+			overflow: hidden;
+		}
+
+		[data-rb-gf-fix] {
+			width: attr(data-rb-gf-fix px, auto)
+		}
+
+		[data-rb-gf-all] {
+			width: 100%;
+		}
+	}
+}

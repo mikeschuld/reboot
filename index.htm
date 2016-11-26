@@ -3,14 +3,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>reboot</title>
-		<link rel="stylesheet" href="css/normalize.css" />
-		<link rel="stylesheet" href="css/rb-core.css" />
+		<link rel="stylesheet" href="css/normalize.min.css" />
+		<link rel="stylesheet" href="css/rb-core.min.css" />
+		<link rel="stylesheet" href="css/rb-gridfree.min.css" />
+		<style type="text/css">
+			main {
+				height: 100%;
+				display: block;
+			}
+			.rb-gridfree > div {
+				height: 40px;
+				border: 1px solid black;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 36px;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+		<script src="js/rb-gridfree.js"></script>
 	</head>
-	<body class="rb-container-dark">
-		<main>
+	<body class="rb-container">
+		<main class="rb-container-dark">
 			<h1>
-				h1: Heading
-				<span>Subtitle</span>
+				reboot!
+				<span>for flexible and responsive mobile and desktop web projects</span>
 			</h1>
 			<h2>
 				h2: Heading
@@ -47,8 +65,31 @@
 					<span>Subtitle</span>
 				</h6>
 				<p>
-					Here is a dark container inside the main container
+					This container also has the .rb-border-rounded class
 				</p>
+			</div>
+			<h1>Going [rb-]gridfree</h1>
+			<p>
+				reboot's "gridfree" system moves away from the traditional 12 column grid based layout used in most responsive frameworks and opts
+				for a more flexible and easy to configure method - relative scale.				
+			</p>
+			<p>
+				relative scale is currently accomplished using a combination of CSS tricks and highly optimized script based methods to ensure
+				compatibility across modern browsers and to minimize content popping post page load.
+			</p>
+			<p>
+				here is a set of div elements configured for relative scale using rb-gridfree data attributes:
+			</p>
+			<div class="rb-container rb-border-rounded rb-gridfree">
+				<p data-rb-gf-all>.rb-container is 100% wide</p>
+				<div data-rb-gf-fix="50" style="background: rgb(253,253,253)">fix 50</div>
+				<div data-rb-gf-rel="1" style="background: rgb(241,241,241)">1</div>
+				<div data-rb-gf-rel="2" style="background: rgb(219,219,219)">2</div>
+				<div data-rb-gf-rel="3" style="background: rgb(185,185,185)">3</div>
+				<div data-rb-gf-fix="200" style="background: rgb(146,146,146)">fix 200</div>
+				<div data-rb-gf-rel="2" style="background: rgb(106,106,106); color: white;">2</div>
+				<div data-rb-gf-rel="1" style="background: rgb(72,72,72); color: white;">1</div>
+				<div data-rb-gf-fix="150" style="background: rgb(47,47,47); color: white;">fix 150</div>
 			</div>
 		</main>
 	</body>
