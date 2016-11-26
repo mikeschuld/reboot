@@ -1,0 +1,5 @@
+# grunt-contrib-sass cache
+.sass-cache
+
+# folders
+node_modules

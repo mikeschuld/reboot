@@ -1,0 +1,25 @@
+{
+  "name": "reboot",
+  "version": "0.0.1",
+  "description": "reboot - for flexible and responsive mobile and desktop web projects",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeschuld/reboot"
+  },
+  "keywords": [
+    "responsive",
+    "html5",
+    "css"
+  ],
+  "author": "Michael Schuld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeschuld/reboot/issues"
+  }
+}
