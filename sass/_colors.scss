@@ -14,6 +14,16 @@ $color-headings-border-dark: #777;
 $color-border-dark: #888;
 $color-border-shadow-dark: #aaa;
 
+$color-tabs-background: #f8f8f8;
+$color-tabs-open-background: #fff;
+$color-tabs: #111;
+$color-tabs-border: #aaa;
+
+$color-tabs-background-dark: #444;
+$color-tabs-open-background-dark: #444;
+$color-tabs-dark: #eee;
+$color-tabs-border-dark: #aaa;
+
 @mixin container-colors($background, $color, $headings-color, $headings-border, $headings-span-color, $border-color, $border-shadow) {
 	background-color: $background;
 	color: $color;
@@ -28,8 +38,26 @@ $color-border-shadow-dark: #aaa;
 	}
 
 	.rb-border, .rb-border-rounded {
-		border: 1px solid $border-color;
+		border-color: $border-color;
 		box-shadow: 0 0 4px $border-shadow;
+	}
+}
+
+@mixin tab-colors($background, $background-open, $color, $border) {
+	ul.rb-tabset {
+		> li {
+			background-color: $background;
+			color: $color;
+			border-color: $border;
+
+			&.rb-open {
+				background-color: $background-open;
+			}
+		}
+	}
+
+	.rb-tab {
+		border-color: $border;
 	}
 }
 
@@ -42,6 +70,8 @@ $color-border-shadow-dark: #aaa;
 		$color-headings-span,
 		$color-border,
 		$color-border-shadow);
+
+	@include tab-colors($color-tabs-background, $color-tabs-open-background, $color-tabs, $color-tabs-border);
 }
 
 .rb-container-dark {
@@ -53,4 +83,6 @@ $color-border-shadow-dark: #aaa;
 		$color-headings-span-dark,
 		$color-border-dark,
 		$color-border-shadow-dark);
+
+	@include tab-colors($color-tabs-background-dark, $color-tabs-open-background-dark, $color-tabs-dark, $color-tabs-border);
 }

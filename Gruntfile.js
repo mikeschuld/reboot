@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'dist/css/rb-core.css': 'sass/rb-core.scss',
-					'dist/css/rb-gridfree.css': 'sass/rb-gridfree.scss'
+					'dist/css/rb-gridfree.css': 'sass/rb-gridfree.scss',
+					'dist/css/rb-tabs.css': 'sass/rb-tabs.scss'
 				}
 			}
 		},
@@ -20,7 +21,8 @@ module.exports = function(grunt) {
 				files: {
 					'dist/css/normalize.min.css': ['node_modules/normalize.css/normalize.css'],
 					'dist/css/rb-core.min.css': ['dist/css/rb-core.css'],
-					'dist/css/rb-gridfree.min.css': ['dist/css/rb-gridfree.css']
+					'dist/css/rb-gridfree.min.css': ['dist/css/rb-gridfree.css'],
+					'dist/css/rb-tabs.min.css': ['dist/css/rb-tabs.css']
 				}
 			}
 		},
@@ -28,7 +30,8 @@ module.exports = function(grunt) {
 		uglify: {
 			my_target: {
 				files: {
-					'dist/js/rb-gridfree.min.js': ['js/rb-gridfree.js']
+					'dist/js/rb-gridfree.min.js': ['js/rb-gridfree.js'],
+					'dist/js/rb-tabs.min.js': ['js/rb-tabs.js']
 				}
 			}
 		},
