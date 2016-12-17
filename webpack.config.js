@@ -1,10 +1,9 @@
 const webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
-    entry: './src/js/rb-core.js',
+    entry: './reboot.js',
     output: {
-        filename: 'docs/js/rb-bundle.js',
+        filename: 'docs/js/reboot-bundle.js',
         path: '.'
     },
     module: {
@@ -18,7 +17,11 @@ const config = {
                 }
             },
             {
-                test: /(\.css|\.scss)$/,
+                test: /(\.css)$/,
+                loader: 'style!css?sourceMap'
+            },
+            {
+                test: /(\.scss)$/,
                 loader: 'style!css?sourceMap!sass?sourceMap'
             }
         ]

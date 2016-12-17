@@ -29,8 +29,6 @@ rb_gridfree.prototype.initialize = function() {
 		return $(this).data("rb-gf-rel");
 	}).each(function(b, block){
 		var rel = $(block).data("rb-gf-rel");
-		var fix = $(block).data("rb-gf-fix");
-
 		$(block).attr("data-rb-gf-rel-pct", rel / relativeTotal);
 	});
 
@@ -66,16 +64,16 @@ rb_gridfree.prototype.initialize = function() {
 }
 
 $(function(){
-	$(".rb-gridfree").each(function(){
+	$(".rb-gridfree").each(function() {
 		var gridfree = new rb_gridfree($(this));
 		gridfree.initialize();
 
-		$(window).on('resize', function(){
+		$(window).on('resize', function() {
 			gridfree.resize();
 		});
 
 		var $tab = $(this).closest(".rb-tab");
-		$tab.on("tab:open", function(e) {
+		$tab.on("tab:open", function() {
 			gridfree.resize();
 		})
 	});

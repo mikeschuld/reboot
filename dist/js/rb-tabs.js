@@ -17,7 +17,7 @@ rb_tabs.prototype.initialize = function() {
 			$($(this).data("rb-tab")).trigger("tab:open");
 		});
 
-		$(tab).on("tab:open", function(e) {
+		$(tab).on("tab:open", function() {
 			$tabs.removeClass("rb-open");
 
 			for(var id = 0; id < tabIds.length; id++) {
