@@ -1,8 +1,6 @@
-# grunt-contrib-sass cache
-.sass-cache
-
 # folders
 node_modules
 
-# IDE
+# DEV
+.eslintrc.json
 .vscode

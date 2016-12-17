@@ -1,0 +1,12 @@
+$content-padding: 0.5em;
+
+@mixin clearfix() {
+	&:before, &:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+}

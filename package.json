@@ -2,16 +2,23 @@
   "name": "reboot",
   "version": "0.0.1",
   "description": "reboot - for flexible and responsive mobile and desktop web projects",
-  "main": "Gruntfile.js",
+  "main": "webpack.config.js",
   "devDependencies": {
-    "grunt": "~1.0.1",
-    "grunt-contrib-sass": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "jquery": "~3.1.1",
-    "grunt-contrib-cssmin": "~1.0.2",
-    "normalize.css": "~5.0.0",
-    "grunt-contrib-uglify": "~2.0.0",
-    "grunt-contrib-copy": "~1.0.0"
+    "@types/jquery": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-es2015": "latest",
+    "copyfiles": "latest",
+    "css-loader": "latest",
+    "jquery": "^3.1.1",
+    "minifier": "latest",
+    "node-sass": "latest",
+    "normalize.css": "latest",
+    "rimraf": "latest",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
   },
   "repository": {
     "type": "git",
@@ -26,5 +33,19 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikeschuld/reboot/issues"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --content-base docs",
+    "lint": "eslint src/js/*.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:js && npm run build:css",
+    "build:js": "copyfiles -f src/js/*.js dist/js",
+    "prebuild:js": "npm run lint",
+    "postbuild:js": "minify dist/js",
+    "build:css": "minify dist/css",
+    "prebuild:css": "node-sass --include-path src/scss src/scss --output dist/css --indent-type tab --indent-width 1 --output-style expanded --source-map true"
   }
 }
