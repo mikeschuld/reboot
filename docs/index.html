@@ -12,52 +12,53 @@
 		</h1>
 		<nav>
 			<ul class="rb-tabset">
-				<li data-rb-tab="#Home" class="rb-open">Home</li>
+				<li data-rb-tab="#home" class="rb-open">home</li>
 				<li data-rb-tab="#gridfree">gridfree</li>
+				<li data-rb-tab="#tables">tables</li>
 			</ul>
 		</nav>
-		<div class="rb-tab rb-container rb-border-rounded rb-open" id="Home">
+		<div class="rb-tab rb-container rb-border rb-open" id="home">
 			<h2>
-				h2: Heading
-				<span>Subtitle</span>
+				h2: heading
+				<span>subtitle</span>
 			</h2>
-			<p>Here is some body text</p>
-			<p>Here is a second paragraph</p>
+			<p>here is some body text</p>
+			<p>here is a second paragraph</p>
 			<div class="rb-container rb-border">
 				<h3>
-					h3: Nested Container
-					<span>Subtitle</span>
+					h3: nested container
+					<span>subtitle</span>
 				</h3>
 				<p>
-					Here is a container inside the main container
+					here is a container inside the main container
 				</p>
 				<h4>
-					h4: Heading
-					<span>Subtitle</span>
+					h4: heading
+					<span>subtitle</span>
 				</h4>
 				<p>
-					Here is a container inside the main container
+					here is a container inside the main container
 				</p>
 			</div>
 			<div class="rb-container-dark rb-border-rounded">
 				<h5>
-					h5: Nested Container
-					<span>Subtitle</span>
+					h5: nested container
+					<span>subtitle</span>
 				</h5>
 				<p>
-					Here is a dark container inside the main container
+					here is a dark container inside the main container
 				</p>
 				<h6>
-					h6: Heading
-					<span>Subtitle</span>
+					h6: heading
+					<span>subtitle</span>
 				</h6>
 				<p>
-					This container also has the .rb-border-rounded class
+					this container also has the .rb-border-rounded class
 				</p>
 			</div>
 		</div>
-		<div class="rb-tab rb-container rb-border-rounded" id="gridfree">
-			<h2>Going [rb-]gridfree</h2>
+		<div class="rb-tab rb-container rb-border" id="gridfree">
+			<h2>going gridfree</h2>
 			<p>
 				reboot's "gridfree" system moves away from the traditional 12 column grid based layout used in most responsive frameworks and opts
 				for a more flexible and easy to configure method - relative scale.				
@@ -70,57 +71,60 @@
 				here is a set of div elements configured for relative scale using rb-gridfree data attributes.
 				notice that fixed and relative width blocks can be mixed in the same container:
 			</p>
-			<div class="rb-container-dark rb-border-rounded rb-gridfree">
-				<div data-gridfree-fix="50" class="rb-container">50</div>
-				<div data-gridfree-rel="3" class="rb-container">rel=3</div>
-				<div data-gridfree-rel="2" class="rb-container">rel=2</div>
-				<div data-gridfree-fix="50" class="rb-container">50</div>
-				<div data-gridfree-fix="50" class="rb-container">50</div>
+			<div id="example-gridfree">
+				<div class="rb-container-dark rb-border-rounded rb-gridfree">
+					<div data-gridfree-fix="50" class="rb-container">50</div>
+					<div data-gridfree-rel="3" class="rb-container">rel=3</div>
+					<div data-gridfree-rel="2" class="rb-container">rel=2</div>
+					<div data-gridfree-fix="50" class="rb-container">50</div>
+					<div data-gridfree-fix="50" class="rb-container">50</div>
+				</div>
 			</div>
-			<pre>
-&lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
-	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
-	&lt;div data-gridfree-rel="3" class="rb-container"&gt;rel=3&lt;/div&gt;
-	&lt;div data-gridfree-rel="2" class="rb-container"&gt;rel=2&lt;/div&gt;
-	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
-	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
-&lt;/div&gt;</pre>
+			<pre data-example="#example-gridfree"></pre>
 			<p>
 				gridfree can be nested just like any other container. all the sizing still works relative to the siblings at the same level
 			</p>
-			<div class="rb-container-dark rb-border-rounded rb-gridfree">
-				<div data-gridfree-rel="3" class="rb-gridfree">
-					<div data-gridfree-rel="1" class="rb-container">
-						rel=1 in rel=3
-					</div>
-					<div data-gridfree-rel="1" class="rb-gridfree">
-						<div data-gridfree-rel="2" class="rb-container">
-							rel=2 in rel=1 in rel=3
+			<div id="example-gridfree-complex">
+				<div class="rb-container-dark rb-border-rounded rb-gridfree">
+					<div data-gridfree-rel="3" class="rb-gridfree">
+						<div data-gridfree-rel="1" class="rb-container">
+							rel=1 in rel=3
 						</div>
-						<div data-gridfree-rel="3" class="rb-container">
-							rel=3 in rel=1 in rel=3
+						<div data-gridfree-rel="1" class="rb-gridfree">
+							<div data-gridfree-rel="2" class="rb-container">
+								rel=2 in rel=1 in rel=3
+							</div>
+							<div data-gridfree-rel="3" class="rb-container">
+								rel=3 in rel=1 in rel=3
+							</div>
 						</div>
 					</div>
+					<div data-gridfree-rel="1" class="rb-container">rel=1</div>
 				</div>
-				<div data-gridfree-rel="1" class="rb-container">rel=1</div>
 			</div>
-			<pre>
-&lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
-	&lt;div data-gridfree-rel="3" class="rb-gridfree"&gt;
-		&lt;div data-gridfree-rel="1" class="rb-container"&gt;
-			rel=1 in rel=3
-		&lt;/div&gt;
-		&lt;div data-gridfree-rel="1" class="rb-gridfree"&gt;
-			&lt;div data-gridfree-rel="2" class="rb-container"&gt;
-				rel=2 in rel=1 in rel=3
-			&lt;/div&gt;
-			&lt;div data-gridfree-rel="3" class="rb-container"&gt;
-				rel=3 in rel=1 in rel=3
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div data-gridfree-rel="1" class="rb-container"&gt;rel=1&lt;/div&gt;
-&lt;/div&gt;</pre>
+			<pre data-example="#example-gridfree-complex"></pre>
+		</div>
+		<div class="rb-tab rb-container rb-border" id="tables">
+			<h2>tables</h2>
+			<p>adding reboot styling to a table is as simple as giving it the <code>rb-table</code> class.</p>
+			<div id="example-table">
+				<table class="rb-table">
+					<thead>
+						<tr>
+							<th>User ID</th>
+							<th>First Name</th>
+							<th>Middle Name</th>
+							<th>Last Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><th scope="row">8a2e0d6c</td><td>John</td><td>Jacob</td><td>Schmidt</td></tr>
+						<tr><th scope="row">c6bad369</td><td>Alice</td><td>Lee</td><td>Jones</td></tr>
+						<tr><th scope="row">6b49ec31</td><td>Robert</td><td>William</td><td>Brown</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<pre data-example="#example-table"></pre>
 		</div>
 	</body>
 </html>

@@ -1,56 +1,52 @@
 {
-	"name": "reboot",
-	"version": "0.0.1",
-	"description": "reboot - for flexible and responsive mobile and desktop web projects",
-	"main": "webpack.config.js",
-	"devDependencies": {
-		"babel-core": "latest",
-		"babel-loader": "latest",
-		"babel-preset-es2015": "latest",
-		"copyfiles": "latest",
-		"css-loader": "latest",
-		"jquery": "^3.1.1",
-		"minifier": "latest",
-		"node-sass": "latest",
-		"normalize.css": "latest",
-		"rimraf": "latest",
-		"sass-loader": "latest",
-		"source-map-loader": "latest",
-		"style-loader": "latest",
-		"ts-loader": "latest",
-		"tslint": "latest",
-		"typescript": "latest",
-		"webpack": "latest",
-		"webpack-dev-server": "latest"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mikeschuld/reboot"
-	},
-	"keywords": [
-		"responsive",
-		"html5",
-		"css"
-	],
-	"author": "Michael Schuld",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mikeschuld/reboot/issues"
-	},
-	"directories": {
-		"doc": "docs"
-	},
-	"scripts": {
-		"start": "webpack-dev-server --content-base docs",
-
-		"clean": "rimraf dist",
-		"build": "npm run clean && npm run build:js && npm run build:css",
-
-		"prebuild:js": "tslint -c tslint.json src/js/*.ts",
-		"build:js": "tsc",
-		"postbuild:js": "minify dist/js",
-
-		"prebuild:css": "node-sass --include-path src/scss src/scss --output dist/css --indent-type tab --indent-width 1 --output-style expanded --source-map true",
-		"build:css": "minify dist/css"
-	}
+  "name": "reboot",
+  "version": "0.0.1",
+  "description": "reboot - for flexible and responsive mobile and desktop web projects",
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "@types/jquery": "^2.0.34",
+    "@types/lodash": "^4.14.43",
+    "css-loader": "latest",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
+    "minifier": "latest",
+    "node-sass": "latest",
+    "normalize.css": "latest",
+    "rimraf": "latest",
+    "sass-loader": "latest",
+    "source-map-loader": "latest",
+    "style-loader": "latest",
+    "ts-loader": "latest",
+    "tslint": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeschuld/reboot"
+  },
+  "keywords": [
+    "responsive",
+    "html5",
+    "css"
+  ],
+  "author": "Michael Schuld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeschuld/reboot/issues"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --content-base docs",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:js && npm run build:css",
+    "prebuild:js": "tslint -c tslint.json src/js/*.ts",
+    "build:js": "tsc",
+    "postbuild:js": "minify dist/js",
+    "prebuild:css": "node-sass --include-path src/scss src/scss --output dist/css --indent-type tab --indent-width 1 --output-style expanded --source-map true",
+    "build:css": "minify dist/css"
+  }
 }

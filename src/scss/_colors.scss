@@ -24,6 +24,10 @@ $color-tabs-open-background-dark: #444;
 $color-tabs-dark: #eee;
 $color-tabs-border-dark: #aaa;
 
+$color-tables-row-border: #ddd;
+
+$color-code-pre-background: #eee;
+
 @mixin container-colors($background, $color, $headings-color, $headings-border, $headings-span-color, $border-color, $border-shadow) {
 	background-color: $background;
 	color: $color;

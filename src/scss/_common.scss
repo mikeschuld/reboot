@@ -1,4 +1,5 @@
 $content-padding: 0.5em;
+$content-margin: 0.5em;
 
 @mixin clearfix() {
 	&:before, &:after {

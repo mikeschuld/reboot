@@ -16,12 +16,6 @@
 			display: block;
 		}
 	}
-
-	p {
-		&:last-child {
-			margin-bottom: 0.15rem;
-		}
-	}
 	
 	pre {
 		margin-bottom: 1em;
@@ -32,15 +26,20 @@
 		margin-top: 5px;
 	}
 
-	*:first-child {
+	> *:first-child {
 		margin-top: 0;
 	}
 
-	*:last-child {
+	> *:last-child {
 		margin-bottom: 0;
 	}
+}
+
+body.rb-container {
+	overflow-y: scroll;
 }
 
 @import 'fonts';
 @import 'colors';
 @import 'borders';
+@import 'tables';

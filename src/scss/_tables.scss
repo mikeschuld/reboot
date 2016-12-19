@@ -1,0 +1,42 @@
+@import 'common';
+@import 'fonts';
+@import 'colors';
+
+.rb-container, .rb-container-dark {
+	.rb-table {
+		border-spacing: 0;
+		width: 100%;
+
+		th {
+			font-family: $font-headings;
+		}
+
+		td, th {
+			margin: 0;
+			padding: 0.25em;
+			text-align: left;
+		}
+
+		> thead > tr > th {
+			border-bottom: 2px solid $color-tables-row-border;
+		}
+
+		> tbody > tr {
+			> td, > th {
+				border-top: 1px solid $color-tables-row-border;
+			}
+		}
+
+		thead, tr {
+			height: 1em;
+		}
+
+		+ .rb-table, + .rb-container, +.rb-container-dark{
+			margin-top: $content-margin;
+		}
+	}
+
+	+ .rb-table {
+		margin-top: $content-margin
+	}
+}
