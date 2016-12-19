@@ -24,6 +24,11 @@
 	margin-bottom: 0.15rem;
 }
 
+.rb-container pre, .rb-container-dark pre {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
 .rb-container + .rb-container, .rb-container + .rb-container-dark, .rb-container-dark + .rb-container, .rb-container-dark + .rb-container-dark {
 	margin-top: 5px;
 }
@@ -96,10 +101,11 @@
 	font-weight: normal;
 }
 
-.rb-container pre, .rb-container-dark pre {
+.rb-container pre, .rb-container code, .rb-container-dark pre, .rb-container-dark code {
 	line-height: 1em;
 	font-family: monospace;
 	font-size: 0.85em;
+	tab-size: 4;
 }
 
 .rb-container {

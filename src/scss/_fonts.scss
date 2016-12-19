@@ -43,9 +43,10 @@ $font-headings-span-size: 0.6em;
 		}
 	}
 
-	pre {
+	pre, code {
 		line-height: 1em;
 		font-family: monospace;
 		font-size: 0.85em;
+		tab-size: 4;
 	}
 }

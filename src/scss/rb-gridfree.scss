@@ -1,38 +1,40 @@
 @import 'common';
 
+$gridfree-margin: 0.25em;
+
 .rb-container, .rb-container-dark {
 	.rb-gridfree {
-		padding: $content-padding / 2;
+		padding: $gridfree-margin / 2;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 	
-		[data-rb-gf-fix],[data-rb-gf-rel],[data-rb-gf-all] {
+		[data-gridfree-fix],[data-gridfree-rel],[data-gridfree-all] {
 			box-sizing: border-box;
-			margin: $content-padding / 2;
+			margin: $gridfree-margin / 2;
 			overflow: auto;
 		}
 
-		[data-rb-gf-fix] {
-			width: attr(data-rb-gf-fix px, auto)
+		[data-gridfree-fix] {
+			width: attr(data-gridfree-fix px, auto)
 		}
 
-		[data-rb-gf-all] {
+		[data-gridfree-all] {
 			width: 100%;
 		}
 
 		> .rb-gridfree {
-			margin: -$content-padding / 2;
+			margin: -$gridfree-margin / 2;
 		}
 	}
 
 	tr.rb-gridfree {
 		display: table-row;
 
-		td[data-rb-gf-fix],
-		th[data-rb-gf-fix],
-		td[data-rb-gf-rel],
-		th[data-rb-gf-rel] {
+		td[data-gridfree-fix],
+		th[data-gridfree-fix],
+		td[data-gridfree-rel],
+		th[data-gridfree-rel] {
 			position: static;
 			display: table-cell;
 			float: none;

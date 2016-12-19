@@ -3,27 +3,27 @@ var RBGridFree = (function () {
         this.$container = $container;
     }
     RBGridFree.prototype.initialize = function () {
-        this.$blocks = this.$container.children("[data-rb-gf-fix],[data-rb-gf-rel]");
+        this.$blocks = this.$container.children("[data-gridfree-fix],[data-gridfree-rel]");
         console.log("rb: initializing " + this.$blocks.length + " blocks");
         var fixedTotal = 0;
         var relativeTotal = 0;
         this.$blocks.filter(function () {
-            return $(this).data("rb-gf-fix");
+            return $(this).data("gridfree-fix");
         }).each(function (b, block) {
-            fixedTotal += $(block).data("rb-gf-fix");
+            fixedTotal += $(block).data("gridfree-fix");
         });
         this.fixedTotal = fixedTotal;
         this.$blocks.filter(function () {
-            return $(this).data("rb-gf-rel");
+            return $(this).data("gridfree-rel");
         }).each(function (b, block) {
-            relativeTotal += $(block).data("rb-gf-rel");
+            relativeTotal += $(block).data("gridfree-rel");
         });
         this.relativeTotal = relativeTotal;
         this.$blocks.filter(function () {
-            return $(this).data("rb-gf-rel");
+            return $(this).data("gridfree-rel");
         }).each(function (b, block) {
-            var rel = $(block).data("rb-gf-rel");
-            $(block).attr("data-rb-gf-rel-pct", rel / relativeTotal);
+            var rel = $(block).data("gridfree-rel");
+            $(block).attr("data-gridfree-rel-pct", rel / relativeTotal);
         });
         console.log("rb: found " + fixedTotal + " fix and " + relativeTotal + " rel");
         this.resize();
@@ -33,8 +33,8 @@ var RBGridFree = (function () {
         var pctScaler = (this.$container.width() - this.fixedTotal) / this.$container.width();
         for (var b = 0; b < this.$blocks.length; b++) {
             var block = this.$blocks[b];
-            var pct = $(block).data("rb-gf-rel-pct") * pctScaler * 100;
-            var fix = $(block).data("rb-gf-fix");
+            var pct = $(block).data("gridfree-rel-pct") * pctScaler * 100;
+            var fix = $(block).data("gridfree-fix");
             var margin = $(block).css("marginLeft") || "0px";
             var width = "0px - 2 * " + margin;
             if (pct) {
