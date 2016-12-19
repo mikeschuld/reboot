@@ -1,30 +1,56 @@
 {
-  "name": "reboot",
-  "version": "0.0.1",
-  "description": "reboot - for flexible and responsive mobile and desktop web projects",
-  "main": "Gruntfile.js",
-  "devDependencies": {
-    "grunt": "~1.0.1",
-    "grunt-contrib-sass": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "jquery": "~3.1.1",
-    "grunt-contrib-cssmin": "~1.0.2",
-    "normalize.css": "~5.0.0",
-    "grunt-contrib-uglify": "~2.0.0",
-    "grunt-contrib-copy": "~1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mikeschuld/reboot"
-  },
-  "keywords": [
-    "responsive",
-    "html5",
-    "css"
-  ],
-  "author": "Michael Schuld",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mikeschuld/reboot/issues"
-  }
+	"name": "reboot",
+	"version": "0.0.1",
+	"description": "reboot - for flexible and responsive mobile and desktop web projects",
+	"main": "webpack.config.js",
+	"devDependencies": {
+		"babel-core": "latest",
+		"babel-loader": "latest",
+		"babel-preset-es2015": "latest",
+		"copyfiles": "latest",
+		"css-loader": "latest",
+		"jquery": "^3.1.1",
+		"minifier": "latest",
+		"node-sass": "latest",
+		"normalize.css": "latest",
+		"rimraf": "latest",
+		"sass-loader": "latest",
+		"source-map-loader": "latest",
+		"style-loader": "latest",
+		"ts-loader": "latest",
+		"tslint": "latest",
+		"typescript": "latest",
+		"webpack": "latest",
+		"webpack-dev-server": "latest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mikeschuld/reboot"
+	},
+	"keywords": [
+		"responsive",
+		"html5",
+		"css"
+	],
+	"author": "Michael Schuld",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mikeschuld/reboot/issues"
+	},
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"start": "webpack-dev-server --content-base docs",
+
+		"clean": "rimraf dist",
+		"build": "npm run clean && npm run build:js && npm run build:css",
+
+		"prebuild:js": "tslint -c tslint.json src/js/*.ts",
+		"build:js": "tsc",
+		"postbuild:js": "minify dist/js",
+
+		"prebuild:css": "node-sass --include-path src/scss src/scss --output dist/css --indent-type tab --indent-width 1 --output-style expanded --source-map true",
+		"build:css": "minify dist/css"
+	}
 }

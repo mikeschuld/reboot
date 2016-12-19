@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>reboot</title>
+		<script src="js/reboot-bundle.js"></script>
+	</head>
+	<body class="rb-container">
+		<h1>
+			reboot!
+			<span>for flexible and responsive mobile and desktop web projects</span>
+		</h1>
+		<nav>
+			<ul class="rb-tabset">
+				<li data-rb-tab="#Home" class="rb-open">Home</li>
+				<li data-rb-tab="#gridfree">gridfree</li>
+			</ul>
+		</nav>
+		<div class="rb-tab rb-container rb-border-rounded rb-open" id="Home">
+			<h2>
+				h2: Heading
+				<span>Subtitle</span>
+			</h2>
+			<p>Here is some body text</p>
+			<p>Here is a second paragraph</p>
+			<div class="rb-container rb-border">
+				<h3>
+					h3: Nested Container
+					<span>Subtitle</span>
+				</h3>
+				<p>
+					Here is a container inside the main container
+				</p>
+				<h4>
+					h4: Heading
+					<span>Subtitle</span>
+				</h4>
+				<p>
+					Here is a container inside the main container
+				</p>
+			</div>
+			<div class="rb-container-dark rb-border-rounded">
+				<h5>
+					h5: Nested Container
+					<span>Subtitle</span>
+				</h5>
+				<p>
+					Here is a dark container inside the main container
+				</p>
+				<h6>
+					h6: Heading
+					<span>Subtitle</span>
+				</h6>
+				<p>
+					This container also has the .rb-border-rounded class
+				</p>
+			</div>
+		</div>
+		<div class="rb-tab rb-container rb-border-rounded" id="gridfree">
+			<h2>Going [rb-]gridfree</h2>
+			<p>
+				reboot's "gridfree" system moves away from the traditional 12 column grid based layout used in most responsive frameworks and opts
+				for a more flexible and easy to configure method - relative scale.				
+			</p>
+			<p>
+				relative scale is currently accomplished using a combination of CSS tricks and highly optimized script based methods to ensure
+				compatibility across modern browsers and to minimize content popping post page load.
+			</p>
+			<p>
+				here is a set of div elements configured for relative scale using rb-gridfree data attributes.
+				notice that fixed and relative width blocks can be mixed in the same container:
+			</p>
+			<div class="rb-container-dark rb-border-rounded rb-gridfree">
+				<div data-gridfree-fix="50" class="rb-container">50</div>
+				<div data-gridfree-rel="3" class="rb-container">rel=3</div>
+				<div data-gridfree-rel="2" class="rb-container">rel=2</div>
+				<div data-gridfree-fix="50" class="rb-container">50</div>
+				<div data-gridfree-fix="50" class="rb-container">50</div>
+			</div>
+			<pre>
+&lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
+	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
+	&lt;div data-gridfree-rel="3" class="rb-container"&gt;rel=3&lt;/div&gt;
+	&lt;div data-gridfree-rel="2" class="rb-container"&gt;rel=2&lt;/div&gt;
+	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
+	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
+&lt;/div&gt;</pre>
+			<p>
+				gridfree can be nested just like any other container. all the sizing still works relative to the siblings at the same level
+			</p>
+			<div class="rb-container-dark rb-border-rounded rb-gridfree">
+				<div data-gridfree-rel="3" class="rb-gridfree">
+					<div data-gridfree-rel="1" class="rb-container">
+						rel=1 in rel=3
+					</div>
+					<div data-gridfree-rel="1" class="rb-gridfree">
+						<div data-gridfree-rel="2" class="rb-container">
+							rel=2 in rel=1 in rel=3
+						</div>
+						<div data-gridfree-rel="3" class="rb-container">
+							rel=3 in rel=1 in rel=3
+						</div>
+					</div>
+				</div>
+				<div data-gridfree-rel="1" class="rb-container">rel=1</div>
+			</div>
+			<pre>
+&lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
+	&lt;div data-gridfree-rel="3" class="rb-gridfree"&gt;
+		&lt;div data-gridfree-rel="1" class="rb-container"&gt;
+			rel=1 in rel=3
+		&lt;/div&gt;
+		&lt;div data-gridfree-rel="1" class="rb-gridfree"&gt;
+			&lt;div data-gridfree-rel="2" class="rb-container"&gt;
+				rel=2 in rel=1 in rel=3
+			&lt;/div&gt;
+			&lt;div data-gridfree-rel="3" class="rb-container"&gt;
+				rel=3 in rel=1 in rel=3
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div data-gridfree-rel="1" class="rb-container"&gt;rel=1&lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+	</body>
+</html>

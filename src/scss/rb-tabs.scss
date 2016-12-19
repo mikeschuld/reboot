@@ -1,0 +1,43 @@
+@import 'common';
+@import 'borders';
+
+.rb-container, .rb-container-dark {
+	ul.rb-tabset {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		
+		li {
+			@extend .rb-border;
+			
+			padding: 1em;
+			cursor: pointer;
+			margin-bottom: 0;
+
+			+ li {
+				margin-left: 3px;
+			}
+
+			&.rb-open {
+				border-bottom: 0;
+			}
+		}
+		
+		@include clearfix();
+	}
+
+	.rb-tab {
+		display: none;
+		margin-top: -1px;
+
+		&.rb-open {
+			display: block;
+		}
+
+		border-top-left-radius: 0;
+	}
+}
