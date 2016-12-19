@@ -7,10 +7,6 @@
 	padding-bottom: 0.15rem;
 }
 
-.rb-container h1:first-child, .rb-container h2:first-child, .rb-container h3:first-child, .rb-container h4:first-child, .rb-container h5:first-child, .rb-container h6:first-child, .rb-container-dark h1:first-child, .rb-container-dark h2:first-child, .rb-container-dark h3:first-child, .rb-container-dark h4:first-child, .rb-container-dark h5:first-child, .rb-container-dark h6:first-child {
-	margin-top: 0;
-}
-
 .rb-container h1 + p, .rb-container h2 + p, .rb-container h3 + p, .rb-container h4 + p, .rb-container h5 + p, .rb-container h6 + p, .rb-container-dark h1 + p, .rb-container-dark h2 + p, .rb-container-dark h3 + p, .rb-container-dark h4 + p, .rb-container-dark h5 + p, .rb-container-dark h6 + p {
 	margin-top: 0.15rem;
 }
@@ -24,8 +20,21 @@
 	margin-bottom: 0.15rem;
 }
 
+.rb-container pre, .rb-container-dark pre {
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
 .rb-container + .rb-container, .rb-container + .rb-container-dark, .rb-container-dark + .rb-container, .rb-container-dark + .rb-container-dark {
 	margin-top: 5px;
+}
+
+.rb-container *:first-child, .rb-container-dark *:first-child {
+	margin-top: 0;
+}
+
+.rb-container *:last-child, .rb-container-dark *:last-child {
+	margin-bottom: 0;
 }
 
 .rb-container, .rb-container-dark {
@@ -96,10 +105,11 @@
 	font-weight: normal;
 }
 
-.rb-container pre, .rb-container-dark pre {
+.rb-container pre, .rb-container code, .rb-container-dark pre, .rb-container-dark code {
 	line-height: 1em;
 	font-family: monospace;
 	font-size: 0.85em;
+	tab-size: 4;
 }
 
 .rb-container {

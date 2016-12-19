@@ -7,33 +7,33 @@ class RBGridFree {
 	constructor(public $container: JQuery) {}
 
 	initialize(): RBGridFree {
-		this.$blocks = this.$container.children("[data-rb-gf-fix],[data-rb-gf-rel]");
+		this.$blocks = this.$container.children("[data-gridfree-fix],[data-gridfree-rel]");
 		console.log("rb: initializing " + this.$blocks.length + " blocks");
 
 		let fixedTotal = 0;
 		let relativeTotal = 0;
 
 		this.$blocks.filter(function(this: JQuery) {
-			return $(this).data("rb-gf-fix");
+			return $(this).data("gridfree-fix");
 		}).each(function(b, block){
-			fixedTotal += <number>$(block).data("rb-gf-fix");
+			fixedTotal += <number>$(block).data("gridfree-fix");
 		});
 
 		this.fixedTotal = fixedTotal;
 
 		this.$blocks.filter(function(this: JQuery) {
-			return $(this).data("rb-gf-rel");
+			return $(this).data("gridfree-rel");
 		}).each(function(b, block){
-			relativeTotal += <number>$(block).data("rb-gf-rel");
+			relativeTotal += <number>$(block).data("gridfree-rel");
 		});
 
 		this.relativeTotal = relativeTotal;
 
 		this.$blocks.filter(function(this: JQuery) {
-			return $(this).data("rb-gf-rel");
+			return $(this).data("gridfree-rel");
 		}).each(function(b, block){
-			let rel = <number>$(block).data("rb-gf-rel");
-			$(block).attr("data-rb-gf-rel-pct", rel / relativeTotal);
+			let rel = <number>$(block).data("gridfree-rel");
+			$(block).attr("data-gridfree-rel-pct", rel / relativeTotal);
 		});
 
 		console.log(`rb: found ${fixedTotal} fix and ${relativeTotal} rel`);
@@ -49,8 +49,8 @@ class RBGridFree {
 		for (let b = 0; b < this.$blocks.length; b++) {
 			let block = this.$blocks[b];
 
-			let pct = $(block).data("rb-gf-rel-pct") * pctScaler * 100;
-			let fix = $(block).data("rb-gf-fix");
+			let pct = $(block).data("gridfree-rel-pct") * pctScaler * 100;
+			let fix = $(block).data("gridfree-fix");
 			let margin = $(block).css("marginLeft") || "0px";
 
 			let width = "0px - 2 * " + margin;
