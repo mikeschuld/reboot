@@ -27,7 +27,7 @@
 .rb-container ul.rb-tabset li, .rb-container-dark ul.rb-tabset li {
 	padding: 1em;
 	cursor: pointer;
-	margin-bottom: 0.5px;
+	margin-bottom: 0;
 }
 
 .rb-container ul.rb-tabset li + li, .rb-container-dark ul.rb-tabset li + li {
