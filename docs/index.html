@@ -77,8 +77,7 @@
 				<div data-gridfree-fix="50" class="rb-container">50</div>
 				<div data-gridfree-fix="50" class="rb-container">50</div>
 			</div>
-			<div class="rb-container">
-				<pre>
+			<pre>
 &lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
 	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
 	&lt;div data-gridfree-rel="3" class="rb-container"&gt;rel=3&lt;/div&gt;
@@ -86,7 +85,42 @@
 	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
 	&lt;div data-gridfree-fix="50" class="rb-container"&gt;fix=150&lt;/div&gt;
 &lt;/div&gt;</pre>
+			<p>
+				gridfree can be nested just like any other container. all the sizing still works relative to the siblings at the same level
+			</p>
+			<div class="rb-container-dark rb-border-rounded rb-gridfree">
+				<div data-gridfree-rel="3" class="rb-gridfree">
+					<div data-gridfree-rel="1" class="rb-container">
+						rel=1 in rel=3
+					</div>
+					<div data-gridfree-rel="1" class="rb-gridfree">
+						<div data-gridfree-rel="2" class="rb-container">
+							rel=2 in rel=1 in rel=3
+						</div>
+						<div data-gridfree-rel="3" class="rb-container">
+							rel=3 in rel=1 in rel=3
+						</div>
+					</div>
+				</div>
+				<div data-gridfree-rel="1" class="rb-container">rel=1</div>
 			</div>
+			<pre>
+&lt;div class="rb-container-dark rb-border-rounded rb-gridfree"&gt;
+	&lt;div data-gridfree-rel="3" class="rb-gridfree"&gt;
+		&lt;div data-gridfree-rel="1" class="rb-container"&gt;
+			rel=1 in rel=3
+		&lt;/div&gt;
+		&lt;div data-gridfree-rel="1" class="rb-gridfree"&gt;
+			&lt;div data-gridfree-rel="2" class="rb-container"&gt;
+				rel=2 in rel=1 in rel=3
+			&lt;/div&gt;
+			&lt;div data-gridfree-rel="3" class="rb-container"&gt;
+				rel=3 in rel=1 in rel=3
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div data-gridfree-rel="1" class="rb-container"&gt;rel=1&lt;/div&gt;
+&lt;/div&gt;</pre>
 		</div>
 	</body>
 </html>
