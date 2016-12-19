@@ -34,7 +34,8 @@ const config = {
 		new webpack.ProvidePlugin({
 			jQuery: "jquery",
 			$: "jquery",
-			jquery: "jquery"
+			jquery: "jquery",
+			_: "lodash"
 		})
 	]
 };
