@@ -1,10 +1,31 @@
 class RBGridFree {
+	static instanceCount: number = 0;
+	static blockCount: number = 0;
+
 	$blocks: JQuery;
+	css: CSSStyleSheet;
 
 	fixedTotal: number;
 	relativeTotal: number;
 
-	constructor(public $container: JQuery) {}
+	constructor(public $container: JQuery) {
+		$container.attr("data-gridfree-instance", RBGridFree.instanceCount);
+
+		let style = (function() {
+			let style = document.createElement("style");
+			style.appendChild(document.createTextNode(""));
+			style.type = "text/css";
+			style.id = `css-gridfree-${RBGridFree.instanceCount}`;
+
+			$container[0].appendChild(style);
+
+			return style;
+		})();
+
+		this.css = <CSSStyleSheet>style.sheet;
+
+		RBGridFree.instanceCount++;
+	}
 
 	initialize(): RBGridFree {
 		this.$blocks = this.$container.children("[data-gridfree-fix],[data-gridfree-rel]");
@@ -12,6 +33,10 @@ class RBGridFree {
 
 		let fixedTotal = 0;
 		let relativeTotal = 0;
+
+		for (let b = 0; b < this.$blocks.length; b++) {
+			$(this.$blocks[b]).attr("data-gridfree-block", RBGridFree.blockCount++);
+		}
 
 		this.$blocks.filter(function(this: JQuery) {
 			return $(this).data("gridfree-fix");
@@ -29,13 +54,6 @@ class RBGridFree {
 
 		this.relativeTotal = relativeTotal;
 
-		this.$blocks.filter(function(this: JQuery) {
-			return $(this).data("gridfree-rel");
-		}).each(function(b, block){
-			let rel = <number>$(block).data("gridfree-rel");
-			$(block).attr("data-gridfree-rel-pct", rel / relativeTotal);
-		});
-
 		console.log(`rb: found ${fixedTotal} fix and ${relativeTotal} rel`);
 
 		this.resize();
@@ -44,12 +62,17 @@ class RBGridFree {
 	}
 
 	resize(): void {
+		while (this.css.cssRules.length) {
+			this.css.deleteRule(0);
+		}
+
 		let pctScaler = (this.$container.width() - this.fixedTotal) / this.$container.width();
 
 		for (let b = 0; b < this.$blocks.length; b++) {
 			let block = this.$blocks[b];
 
-			let pct = $(block).data("gridfree-rel-pct") * pctScaler * 100;
+			let rel = <number>$(block).data("gridfree-rel");
+			let pct = (rel / this.relativeTotal) * pctScaler * 100;
 			let fix = $(block).data("gridfree-fix");
 			let margin = $(block).css("marginLeft") || "0px";
 
@@ -63,12 +86,19 @@ class RBGridFree {
 				width += " + " + fix + "px";
 			}
 
-			$(block).css("width", "calc(" + width + ")");
+			let instance = this.$container.data("gridfree-instance");
+			let gridfreeBlock = $(block).data("gridfree-block");
+
+			this.css.insertRule(
+				`[data-gridfree-instance = '${instance}'] [data-gridfree-block = '${gridfreeBlock}'] {
+					width: calc(${width});
+				}`,
+				0);
 		}
 	}
 }
 
-$(function(){
+$(function() {
 	$(".rb-gridfree").each(function(this: JQuery) {
 		let gridfree = new RBGridFree($(this));
 		gridfree.initialize();
