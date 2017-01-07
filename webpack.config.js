@@ -3,8 +3,9 @@ const webpack = require("webpack");
 const config = {
 	entry: "./reboot.ts",
 	output: {
-		filename: "docs/js/reboot-bundle.js",
-		path: "."
+		filename: "js/reboot-bundle.js",
+		path: "docs",
+		publicPath: ""
 	},
 	devtool: "source-map",
 	module: {
