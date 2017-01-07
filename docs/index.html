@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>reboot</title>
 		<script src="js/reboot-bundle.js"></script>
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 	<body class="rb-container">
 		<h1>
@@ -106,7 +107,9 @@
 		</div>
 		<div class="rb-tab rb-container rb-border" id="tables">
 			<h2>tables</h2>
-			<p>adding reboot styling to a table is as simple as giving it the <code>rb-table</code> class.</p>
+			<p>
+				adding reboot styling to a table is as simple as giving it the <code>rb-table</code> class.
+			</p>
 			<div id="example-table">
 				<table class="rb-table">
 					<thead>
@@ -125,6 +128,46 @@
 				</table>
 			</div>
 			<pre data-example="#example-table"></pre>
+			<h2>gridfree tables</h2>
+			<p>
+				tables also work with gridfree to let you mix static width and relative columns with ease.
+			</p>
+			<div id="example-table-gridfree">
+				<table class="rb-table">
+					<thead>
+						<tr class="rb-gridfree">
+							<th data-gridfree-fix="30"><input type="checkbox" /></th>
+							<th data-gridfree-fix="100">User ID</th>
+							<th data-gridfree-rel="1">First Name</th>
+							<th data-gridfree-rel="1">Middle Name</th>
+							<th data-gridfree-rel="1">Last Name</th>
+							<th data-gridfree-fix="30"></th>
+							<th data-gridfree-fix="30"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<th scope="row">8a2e0d6c</td><td>John</td><td>Jacob</td><td>Schmidt</td>
+							<td><i class="fa fa-pencil"></i></td>
+							<td><i class="fa fa-times"></i></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<th scope="row">c6bad369</td><td>Alice</td><td>Lee</td><td>Jones</td>
+							<td><i class="fa fa-pencil"></i></td>
+							<td><i class="fa fa-times"></i></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<th scope="row">6b49ec31</td><td>Robert</td><td>William</td><td>Brown</td>
+							<td><i class="fa fa-pencil"></i></td>
+							<td><i class="fa fa-times"></i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<pre data-example="#example-table-gridfree"></pre>
 		</div>
 	</body>
 </html>

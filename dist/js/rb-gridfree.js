@@ -7,13 +7,16 @@ var RBGridFree = (function () {
             style.appendChild(document.createTextNode(""));
             style.type = "text/css";
             style.id = "css-gridfree-" + RBGridFree.instanceCount;
-            $container[0].appendChild(style);
+            $(style).insertAfter($container);
             return style;
         })();
         this.css = style.sheet;
         RBGridFree.instanceCount++;
     }
     RBGridFree.prototype.initialize = function () {
+        if (this.$container.is("tr")) {
+            this.$container.closest("table").css("table-layout", "fixed");
+        }
         this.$blocks = this.$container.children("[data-gridfree-fix],[data-gridfree-rel]");
         console.log("rb: initializing " + this.$blocks.length + " blocks");
         var fixedTotal = 0;
