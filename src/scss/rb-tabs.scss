@@ -12,8 +12,6 @@
 		flex-wrap: wrap;
 		
 		li {
-			@extend .rb-border;
-			
 			padding: 1em;
 			cursor: pointer;
 			margin-bottom: 0;
@@ -24,6 +22,15 @@
 
 			&.rb-open {
 				border-bottom: 0;
+			}
+
+			&.rb-border {
+				box-shadow: 0 0 0 transparent;
+			}
+
+			&.rb-border-rounded {
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
 			}
 		}
 		
