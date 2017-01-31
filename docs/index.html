@@ -13,9 +13,10 @@
 		</h1>
 		<nav>
 			<ul class="rb-tabset">
-				<li data-rb-tab="#home" class="rb-open">home</li>
-				<li data-rb-tab="#gridfree">gridfree</li>
-				<li data-rb-tab="#tables">tables</li>
+				<li data-rb-tab="#home" class="rb-border rb-open">home</li>
+				<li data-rb-tab="#gridfree" class="rb-border">gridfree</li>
+				<li data-rb-tab="#tables" class="rb-border">tables</li>
+				<li data-rb-tab="#tabs" class="rb-border">tabs</li>
 			</ul>
 		</nav>
 		<div class="rb-tab rb-container rb-border rb-open" id="home">
@@ -69,7 +70,7 @@
 				compatibility across modern browsers and to minimize content popping post page load.
 			</p>
 			<p>
-				here is a set of div elements configured for relative scale using rb-gridfree data attributes.
+				here is a set of div elements configured for relative scale using <code>data-gridfree</code> attributes.
 				notice that fixed and relative width blocks can be mixed in the same container:
 			</p>
 			<div id="example-gridfree">
@@ -83,7 +84,7 @@
 			</div>
 			<pre data-example="#example-gridfree"></pre>
 			<p>
-				gridfree can be nested just like any other container. all the sizing still works relative to the siblings at the same level
+				gridfree can be nested just like any other container. all the sizing still works relative to the siblings at the same level.
 			</p>
 			<div id="example-gridfree-complex">
 				<div class="rb-container-dark rb-border-rounded rb-gridfree">
@@ -108,7 +109,7 @@
 		<div class="rb-tab rb-container rb-border" id="tables">
 			<h2>tables</h2>
 			<p>
-				adding reboot styling to a table is as simple as giving it the <code>rb-table</code> class.
+				adding reboot styling to a table is as simple as giving it the <code>.rb-table</code> class.
 			</p>
 			<div id="example-table">
 				<table class="rb-table">
@@ -168,6 +169,29 @@
 				</table>
 			</div>
 			<pre data-example="#example-table-gridfree"></pre>
+		</div>
+		<div class="rb-tab rb-container rb-border" id="tabs">
+			<h2>tabs</h2>
+			<p>
+				tabs are created by combining an <code>.rb-tabset</code> and a collection of <code>.rb-tab</code> elements matched by a css selector.
+			</p>
+			<div id="example-tabs">
+				<nav>
+					<ul class="rb-tabset">
+						<li data-rb-tab="#tab1" class="rb-open rb-border-rounded">#tab1</li>
+						<li data-rb-tab="#tab2" class="rb-border">#tab2</li>
+					</ul>
+				</nav>
+				<div id="tab1" class="rb-container rb-tab rb-border-rounded rb-open">
+					<h3>tab1</h3>
+					<p>this tab and its content have a rounded border style</p>
+				</div>
+				<div id="tab2" class="rb-container rb-tab rb-border">
+					<h3>tab2</h3>
+					<p>this tab and its content have a regular border style</p>
+				</div>
+			</div>
+			<pre data-example="#example-tabs"></pre>				
 		</div>
 	</body>
 </html>

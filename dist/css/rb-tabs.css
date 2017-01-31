@@ -1,4 +1,4 @@
-.rb-container .rb-border, .rb-container .rb-border-rounded, .rb-container ul.rb-tabset li, .rb-container-dark ul.rb-tabset .rb-container li, .rb-container-dark .rb-border, .rb-container-dark .rb-border-rounded, .rb-container ul.rb-tabset .rb-container-dark li, .rb-container-dark ul.rb-tabset li {
+.rb-container .rb-border, .rb-container .rb-border-rounded, .rb-container-dark .rb-border, .rb-container-dark .rb-border-rounded {
 	border-style: solid;
 	border-width: 1px;
 }
@@ -36,6 +36,15 @@
 
 .rb-container ul.rb-tabset li.rb-open, .rb-container-dark ul.rb-tabset li.rb-open {
 	border-bottom: 0;
+}
+
+.rb-container ul.rb-tabset li.rb-border, .rb-container ul.rb-tabset li.rb-border-rounded, .rb-container-dark ul.rb-tabset li.rb-border, .rb-container-dark ul.rb-tabset li.rb-border-rounded {
+	box-shadow: 0 0 0 transparent;
+}
+
+.rb-container ul.rb-tabset li.rb-border-rounded, .rb-container-dark ul.rb-tabset li.rb-border-rounded {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .rb-container ul.rb-tabset:before, .rb-container ul.rb-tabset:after, .rb-container-dark ul.rb-tabset:before, .rb-container-dark ul.rb-tabset:after {
