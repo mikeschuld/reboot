@@ -1,0 +1,9 @@
+.rb-container, .rb-container-dark {
+	.rb-modal {
+		display: none;
+
+		&.rb-open {
+			display: block;
+		}
+	}
+}
