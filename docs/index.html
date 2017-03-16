@@ -200,11 +200,18 @@
 				modals...
 			</p>
 			<div id="example-modal">
-				<div class="rb-modal rb-container rb-border-rounded">
-					
+				<div id="modal" class="rb-modal rb-container rb-border-rounded">
+					<h3>
+						modal title
+						<i data-rb-modal-close class="fa fa-close pull-right"></i>
+					</h3>
+					<p>
+						content inside modals acts like it would in any other container
+					</p>
+					<button data-rb-modal-close>close modal</button>
 				</div>
-				<button type="button" data-rb-modal="#example-modal .rb-modal" data-rb-event="click">
-					Launch Modal
+				<button type="button" data-rb-modal-open="#modal" data-rb-event="click">
+					launch modal
 				</button>
 			</div>
 			<pre data-example="#example-modal"></pre>
