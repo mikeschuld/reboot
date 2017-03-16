@@ -17,6 +17,7 @@
 				<li data-rb-tab="#gridfree" class="rb-border">gridfree</li>
 				<li data-rb-tab="#tables" class="rb-border">tables</li>
 				<li data-rb-tab="#tabs" class="rb-border">tabs</li>
+				<li data-rb-tab="#modals" class="rb-border">modals</li>
 			</ul>
 		</nav>
 		<div class="rb-tab rb-container rb-border rb-open" id="home">
@@ -192,6 +193,28 @@
 				</div>
 			</div>
 			<pre data-example="#example-tabs"></pre>				
+		</div>
+		<div class="rb-tab rb-container rb-border" id="modals">
+			<h2>modals</h2>
+			<p>
+				modals...
+			</p>
+			<div id="example-modal">
+				<div id="modal" class="rb-modal rb-container rb-border-rounded">
+					<h3>
+						modal title
+						<i data-rb-modal-close class="fa fa-close pull-right"></i>
+					</h3>
+					<p>
+						content inside modals acts like it would in any other container
+					</p>
+					<button data-rb-modal-close>close modal</button>
+				</div>
+				<button type="button" data-rb-modal-open="#modal" data-rb-event="click">
+					launch modal
+				</button>
+			</div>
+			<pre data-example="#example-modal"></pre>
 		</div>
 	</body>
 </html>
