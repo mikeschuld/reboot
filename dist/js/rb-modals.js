@@ -33,9 +33,9 @@ var RBModal = (function () {
         $modal.appendTo($outerContainer);
         return this;
     };
+    RBModal.open = 0;
     return RBModal;
 }());
-RBModal.open = 0;
 $(function () {
     $("[data-rb-modal-open]").each(function () {
         var modal = new RBModal($(this));

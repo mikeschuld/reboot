@@ -1,11 +1,12 @@
 const webpack = require("webpack");
+const path = require("path");
 
 const config = {
 	entry: "./reboot.ts",
 	output: {
 		filename: "js/reboot-bundle.js",
-		path: "docs",
-		publicPath: ""
+		path: path.resolve("docs"),
+		publicPath: "",
 	},
 	devtool: "source-map",
 	module: {
@@ -17,14 +18,12 @@ const config = {
 			},
 			{
 				test: /\.css$/,
-				loader: "style!css?sourceMap"
+				loader: "style-loader!css-loader?sourceMap"
 			},
 			{
 				test: /\.scss$/,
-				loader: "style!css?sourceMap!sass?sourceMap"
-			}
-		],
-		preLoaders: [
+				loader: "style-loader!css-loader?sourceMap!sass-loader?sourceMap"
+			},
 			{
 				test: /\.js$/,
 				loader: "source-map-loader"

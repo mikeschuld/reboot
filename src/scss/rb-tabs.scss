@@ -12,10 +12,12 @@
 		flex-wrap: wrap;
 		
 		li {
-			padding: 1em;
 			cursor: pointer;
-			margin-bottom: 0;
-
+			
+			margin-bottom: -1px;
+			padding: 1em;
+			z-index: 0;
+			
 			+ li {
 				margin-left: 3px;
 			}
@@ -38,13 +40,15 @@
 	}
 
 	.rb-tab {
-		display: none;
-		margin-top: -1px;
-
-		&.rb-open {
-			display: block;
-		}
-
+		margin-top: 0;
 		border-top-left-radius: 0;
+
+		&:not(.rb-open) {
+			@include hidden();
+
+			* {
+				@include hidden();
+			}
+		}
 	}
 }

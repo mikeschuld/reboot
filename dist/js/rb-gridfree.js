@@ -63,10 +63,10 @@ var RBGridFree = (function () {
             this.css.insertRule("[data-gridfree-instance = '" + instance + "'] [data-gridfree-block = '" + gridfreeBlock + "'] {\n\t\t\t\t\twidth: calc(" + width + ");\n\t\t\t\t}", 0);
         }
     };
+    RBGridFree.instanceCount = 0;
+    RBGridFree.blockCount = 0;
     return RBGridFree;
 }());
-RBGridFree.instanceCount = 0;
-RBGridFree.blockCount = 0;
 $(function () {
     $(".rb-gridfree").each(function () {
         var gridfree = new RBGridFree($(this));
@@ -74,10 +74,10 @@ $(function () {
         $(window).on("resize", function () {
             gridfree.resize();
         });
-        var $tab = $(this).closest(".rb-tab");
-        $tab.on("tab:open", function () {
-            gridfree.resize();
-        });
+        // let $tab = $(this).closest(".rb-tab");
+        // $tab.on("tab:open", function() {
+        // 	gridfree.resize();
+        // });
     });
 });
 //# sourceMappingURL=rb-gridfree.js.map

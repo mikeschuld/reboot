@@ -11,3 +11,22 @@ $content-margin: 0.5em;
 		clear: both;
 	}
 }
+
+@mixin hidden() {
+	// Hidden uses visibility and height changes
+	// so gridfree widths can still be calculated
+	border-bottom-width: 0;
+	border-top-width: 0;
+
+	padding-bottom: 0;
+	padding-top: 0;
+
+	height: 0;
+	overflow-y: hidden;
+
+	visibility: hidden;
+}
+
+.rb-hidden {
+	@include hidden();
+}

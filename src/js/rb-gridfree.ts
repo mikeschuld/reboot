@@ -111,9 +111,9 @@ $(function() {
 			gridfree.resize();
 		});
 
-		let $tab = $(this).closest(".rb-tab");
-		$tab.on("tab:open", function() {
-			gridfree.resize();
-		});
+		// let $tab = $(this).closest(".rb-tab");
+		// $tab.on("tab:open", function() {
+		// 	gridfree.resize();
+		// });
 	});
 });
