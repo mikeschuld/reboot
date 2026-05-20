@@ -5,6 +5,7 @@ import "./src/scss/rb-gridfree.scss";
 import "./src/scss/rb-tabs.scss";
 import "./src/scss/rb-modals.scss";
 
+import "./src/js/rb-core.ts";
 import "./src/js/rb-example.ts";
 import "./src/js/rb-gridfree.ts";
 import "./src/js/rb-tabs.ts";

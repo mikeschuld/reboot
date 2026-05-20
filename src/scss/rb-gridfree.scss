@@ -26,6 +26,10 @@ $gridfree-margin: 0.25em;
 		> .rb-gridfree {
 			margin: -$gridfree-margin / 2;
 		}
+
+		[data-gridfree-allow-overflow] {
+			overflow:initial;
+		}
 	}
 
 	tr.rb-gridfree {

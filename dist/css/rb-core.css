@@ -1,3 +1,13 @@
+.rb-hidden {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
+}
+
 .rb-container, .rb-container-dark {
 	padding: 0.5em;
 }
@@ -269,6 +279,16 @@ body.rb-container {
 .rb-container > h1, .rb-container > h2, .rb-container > h3, .rb-container > h4, .rb-container > h5, .rb-container > h6, .rb-container-dark > h1, .rb-container-dark > h2, .rb-container-dark > h3, .rb-container-dark > h4, .rb-container-dark > h5, .rb-container-dark > h6 {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
+}
+
+.rb-hidden {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
 }
 
 .rb-container {

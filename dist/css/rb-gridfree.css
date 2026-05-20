@@ -1,3 +1,13 @@
+.rb-hidden {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
+}
+
 .rb-container .rb-gridfree, .rb-container-dark .rb-gridfree {
 	padding: 0.125em;
 	display: flex;
@@ -21,6 +31,10 @@
 
 .rb-container .rb-gridfree > .rb-gridfree, .rb-container-dark .rb-gridfree > .rb-gridfree {
 	margin: -0.125em;
+}
+
+.rb-container .rb-gridfree [data-gridfree-allow-overflow], .rb-container-dark .rb-gridfree [data-gridfree-allow-overflow] {
+	overflow: initial;
 }
 
 .rb-container tr.rb-gridfree, .rb-container-dark tr.rb-gridfree {

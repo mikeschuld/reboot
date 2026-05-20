@@ -1,3 +1,13 @@
+.rb-hidden {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
+}
+
 .rb-container .rb-border, .rb-container .rb-border-rounded, .rb-container-dark .rb-border, .rb-container-dark .rb-border-rounded {
 	border-style: solid;
 	border-width: 1px;
@@ -25,9 +35,10 @@
 }
 
 .rb-container ul.rb-tabset li, .rb-container-dark ul.rb-tabset li {
-	padding: 1em;
 	cursor: pointer;
-	margin-bottom: 0;
+	margin-bottom: -1px;
+	padding: 1em;
+	z-index: 0;
 }
 
 .rb-container ul.rb-tabset li + li, .rb-container-dark ul.rb-tabset li + li {
@@ -57,13 +68,28 @@
 }
 
 .rb-container .rb-tab, .rb-container-dark .rb-tab {
-	display: none;
-	margin-top: -1px;
+	margin-top: 0;
 	border-top-left-radius: 0;
 }
 
-.rb-container .rb-tab.rb-open, .rb-container-dark .rb-tab.rb-open {
-	display: block;
+.rb-container .rb-tab:not(.rb-open), .rb-container-dark .rb-tab:not(.rb-open) {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
+}
+
+.rb-container .rb-tab:not(.rb-open) *, .rb-container-dark .rb-tab:not(.rb-open) * {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 0;
+	overflow-y: hidden;
+	visibility: hidden;
 }
 
 /*# sourceMappingURL=rb-tabs.css.map */

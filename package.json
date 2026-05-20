@@ -18,9 +18,7 @@
     "style-loader": "latest",
     "ts-loader": "latest",
     "tslint": "latest",
-    "typescript": "latest",
-    "webpack": "latest",
-    "webpack-dev-server": "latest"
+    "typescript": "latest"
   },
   "repository": {
     "type": "git",
@@ -42,7 +40,7 @@
   "scripts": {
     "start": "webpack-dev-server --content-base docs",
     "clean": "rimraf dist && rimraf docs/js",
-    "build": "npm run clean && npm run build:js && npm run build:css && webpack --optimize-minimize",
+    "build": "npm run clean && npm run build:js && npm run build:css",
     "prebuild:js": "tslint -c tslint.json src/js/*.ts",
     "build:js": "tsc",
     "postbuild:js": "minify dist/js",

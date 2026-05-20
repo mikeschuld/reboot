@@ -20,6 +20,9 @@ var RBTabs = (function () {
                 $($(this).data("rb-tab")).addClass("rb-open");
             });
         }
+        if ($tabs.find(".rb-open").length === 0) {
+            $tabs.first().addClass(".rb-open");
+        }
         return this;
     };
     return RBTabs;

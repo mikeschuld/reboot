@@ -1,4 +1,5 @@
 "use strict";
+exports.__esModule = true;
 var _ = require("lodash");
 $(function () {
     var $examples = $("[data-example]");

@@ -1,4 +1,4 @@
-class RBModal {
+export class RBModal {
 	static open: number = 0;
 	static $backdrop: JQuery;
 

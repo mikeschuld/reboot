@@ -1,4 +1,4 @@
-class RBTabs {
+export class RBTabs {
 	constructor(private $tabset: JQuery) { }
 
 	initialize(): RBTabs {
@@ -24,6 +24,10 @@ class RBTabs {
 				$(this).addClass("rb-open");
 				$($(this).data("rb-tab")).addClass("rb-open");
 			});
+		}
+
+		if ($tabs.find(".rb-open").length === 0) {
+			$tabs.first().addClass(".rb-open");
 		}
 
 		return this;
